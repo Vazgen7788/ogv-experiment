@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript" src="./ogv.js">
+
+    </script>
+    <script type="text/javascript">
+      var player = new OGVPlayer();
+
+      // Or with options
+      var player = new OGVPlayer({
+      	debug: true,
+      	debugFilter: /demuxer/
+      });
+
+      // Now treat it just like a video or audio element
+      document.body.appendChild(player);
+      player.src = 'sample_640x360.ogv';
+      player.play();
+      player.addEventListener('ended', function() {
+        // ta-da!
+      });
+    </script>
+  </body>
+</html>
